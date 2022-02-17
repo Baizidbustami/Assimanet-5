@@ -1,7 +1,9 @@
-function Allahuakbar (){
+
+function jobINcomeDeductionCalculation (){
     const incomeButton = document.getElementById('income-btn');
     const incomeButtonText = incomeButton.value;
-    const incomeButtonTotal = parseFloat(incomeButtonText);
+    const incomeTotalNumbar = parseFloat(incomeButtonText);
+
     incomeButton.value=''
     // food input Button
     const foodButton = document.getElementById('food-btn');
@@ -30,8 +32,7 @@ function Allahuakbar (){
     // Total Blance
     const blance = document.getElementById('blance-amount');
     const blanceText = blance.innerText;
-    // const blanceTotal = parseFloat(blanceText);
-     const blanceButton=incomeButtonTotal - allsumTotal;  
+     const blanceButton= incomeTotalNumbar - allsumTotal;  
      blance.innerText = blanceButton;
 
     //  saveButton
@@ -39,23 +40,23 @@ function Allahuakbar (){
       const percentageButton = document.getElementById('Percentage');
       const percentageText = percentageButton.value;
       const PercentageTotal = parseFloat(percentageText);
-      const fahim = blanceButton * PercentageTotal / 100;
-      percentageButton.value = fahim;
+      const PercentageTotalAmount = incomeTotalNumbar * PercentageTotal / 100;
+      percentageButton.value = PercentageTotalAmount;
       percentageButton.value=''
 
+  
     //   saveAmount
       const savAmount = document.getElementById('amount');
       const savAmountText = savAmount.innerText;
       const savAmountTotal = parseFloat(savAmountText);
-      const savAmountTotalBlance = fahim + savAmountTotal;
+      const savAmountTotalBlance = PercentageTotalAmount + savAmountTotal;
+      
        savAmount.innerText =savAmountTotalBlance;
     
 
         // Remaining Balance 
         const remainingButton = document.getElementById('Remaining-blc');
         const remainingButtonText = remainingButton.innerText;
-        // const remainingButtonTotal = parseFloat(remainingButtonText);
-        // const totalCost = fahim - savAmountTotalBlance
         remainingButton.innerText = blanceButton - savAmountTotalBlance
     })
 }
@@ -64,6 +65,6 @@ function Allahuakbar (){
 // })
 
 document.getElementById('Calculate-btn').addEventListener('click', function(){
-    Allahuakbar ()
+    jobINcomeDeductionCalculation ()
  
 })
