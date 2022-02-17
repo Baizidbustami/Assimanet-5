@@ -7,18 +7,17 @@ main{
     margin-right: 30px;
 }
 h1{
-     font-family: Arial Black;
      font-size: 50px;
      margin-top: 20px;
      margin-bottom: 20px;
-    color:coral;
+     font-weight: 600;
+     color:rgb(9, 151, 151);
 }
 
    /* img */
 
 .doller-img{
     width: 800px;
-    height: 650px;
     float:left;
 }
   
@@ -81,7 +80,7 @@ font-size: 23px;
 @media only screen and (max-width: 850px) {
     .doller-img{
         width:100%;
-        height: 520px;
+
     }
         main{
             margin-left: 0px;
@@ -98,7 +97,7 @@ font-size: 23px;
 @media only screen and (max-width: 600px) {
     .doller-img{
         width:100%;
-        height: 520px;
+        
     }
         main{
             margin-left: 0px;
