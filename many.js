@@ -1,29 +1,46 @@
 
 function jobINcomeDeductionCalculation (){
+    const paragarp = document.getElementById('notify-fail')
+       paragarp.style.display='none'
+
     const incomeButton = document.getElementById('income-btn');
     const incomeButtonText = incomeButton.value;
     const incomeTotalNumbar = parseFloat(incomeButtonText);
-
     incomeButton.value=''
+    if(incomeTotalNumbar < 0){
+        paragarp.style.display='block'
+    }
+
     // food input Button
     const foodButton = document.getElementById('food-btn');
     const foodButtonText = foodButton.value;
     const foodButtonTotal =parseFloat(foodButtonText);
     foodButton.value=''
+    if(foodButtonTotal < 0){
+        paragarp.style.display='block'
+    }
 
+//   
     // rent Input Button
     const rentButton = document.getElementById('rent-btn');
     const rentButtonText = rentButton.value;
     const rentButtonTotal =parseFloat(rentButtonText);
     rentButton.value=''
+    if(rentButtonTotal < 0){
+        paragarp.style.display='block'
+    }
 
     // Clothes Input Button
     const clotheButton = document.getElementById('clothes-btn');
     const clotheButtonText = clotheButton.value;
     const clotheButtonTotal =parseFloat(clotheButtonText);
     clotheButton.value=''
-    const allsumTotal = foodButtonTotal+rentButtonTotal+clotheButtonTotal;
-    const expenses = document.getElementById('deposit-amount');
+    if(clotheButtonTotal < 0 ){
+        paragarp.style.display='block'
+    }
+    else{
+        let allsumTotal = foodButtonTotal+rentButtonTotal+clotheButtonTotal;
+        const expenses = document.getElementById('deposit-amount');
     const expensesText = expenses.innerText;
     const totalExpenses = parseFloat(expensesText);
     const mahi = totalExpenses +allsumTotal;
@@ -34,12 +51,16 @@ function jobINcomeDeductionCalculation (){
     const blanceText = blance.innerText;
      const blanceButton= incomeTotalNumbar - allsumTotal;  
      blance.innerText = blanceButton;
+    }
+
+    
 
     //  saveButton
      document.getElementById('save-btn').addEventListener('click',function(){
       const percentageButton = document.getElementById('Percentage');
       const percentageText = percentageButton.value;
       const PercentageTotal = parseFloat(percentageText);
+
       const PercentageTotalAmount = incomeTotalNumbar * PercentageTotal / 100;
       percentageButton.value = PercentageTotalAmount;
       percentageButton.value=''
@@ -50,7 +71,6 @@ function jobINcomeDeductionCalculation (){
       const savAmountText = savAmount.innerText;
       const savAmountTotal = parseFloat(savAmountText);
       const savAmountTotalBlance = PercentageTotalAmount + savAmountTotal;
-      
        savAmount.innerText =savAmountTotalBlance;
     
 

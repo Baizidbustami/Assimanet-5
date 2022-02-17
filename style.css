@@ -72,6 +72,11 @@ font-size: 23px;
     font-size: 23px;
 }
 
+#notify-fail{
+    display: none;
+    color: red;
+}
+
   /* iphone rasponsive */
 @media only screen and (max-width: 850px) {
     .doller-img{
